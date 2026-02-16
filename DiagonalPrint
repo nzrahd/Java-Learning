@@ -1,0 +1,27 @@
+public class DiagonalPrint {
+    public static void main(String[] args) {
+        int[][] arr = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+        int n = arr.length;
+        for (int d = 0; d < 2 * n - 1; d++) {
+            int row, col;
+            if (d < n) {
+                row = d;
+                col = 0;
+            } 
+            else {
+                row = n - 1;
+                col = d - n + 1;
+            }
+            while (row >= 0 && col < n) {
+                System.out.print(arr[row][col] + " ");
+                row--;   
+                col++;  
+            }
+            System.out.println();
+        }
+    }
+}
